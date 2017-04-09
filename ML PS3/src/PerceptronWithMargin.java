@@ -16,7 +16,36 @@ public class PerceptronWithMargin {
             BufferedReader br = new BufferedReader(in);
             String line;
             while ((line = br.readLine()) != null) {
-                System.out.println(line);
+             //   System.out.println(line);
+                String[] splited = line.split("\\s+");
+
+                Row r = new Row();
+
+                String checkLabel = splited[0];
+
+                char classSign = checkLabel.charAt(0);
+
+                if(classSign == '+')
+                {
+                    r.setLabel(1);
+                }else if(classSign == '-')
+                {
+                    r.setLabel(-1);
+                }
+
+                ArrayList<Double> xVectorEachRow = new ArrayList<>();
+
+                for(int i=1;i<splited.length;i++)
+                {
+                    String s = splited[i];
+                    String[] xVectorArray = s.split(":");
+                    String partX = xVectorArray[0];
+                    Double partXDouble = Double.valueOf(partX);
+                    xVectorEachRow.add(partXDouble);
+                }
+
+                r.setXList(xVectorEachRow);
+                rowsList.add(r);
 
             }
 

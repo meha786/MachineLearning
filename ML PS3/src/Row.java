@@ -5,5 +5,25 @@ import java.util.ArrayList;
  */
 public class Row {
     private int label;
-    ArrayList<Double> row;
+    private ArrayList<Double> xList;
+
+    public int getLabel()
+    {
+        return this.label;
+    }
+
+    public void setLabel(int labelInput)
+    {
+        this.label = labelInput;
+    }
+
+    public ArrayList<Double>  getXList()
+    {
+        return this.xList;
+    }
+
+    public void setXList(ArrayList<Double> xListInput)
+    {
+        this.xList = xListInput;
+    }
 }
